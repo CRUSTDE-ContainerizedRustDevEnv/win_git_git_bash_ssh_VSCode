@@ -108,7 +108,7 @@ In Windows, I use SSH for:
 This configuration worked for me:
 
 I have 2 separate config files for Windows and WSL, but I use only the private keys from inside WSL. So I don't have to copy them into Windows.  
-In Linux `~\.ssh\config` I used the paths like `~/.ssh/key`. Find the code [here](configuration_files/debian_files/.ssh/config).  
+In Linux `~\.ssh\config` I used the paths like `~/.ssh/key`.
 
 In Windows "C:\Users\luciano\.ssh\config" I used the paths like `//wsl.localhost/Debian/home/luciano/.ssh/key`. Find the code [here](configuration_files/win_files/c/Users/luciano/.ssh/config).
 
