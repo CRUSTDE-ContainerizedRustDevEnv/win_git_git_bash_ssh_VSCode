@@ -4,7 +4,7 @@
 ***version: 2024.323.1347 date: 2024-03-23 author: [bestia.dev](https://bestia.dev) repository: [GitHub](https://github.com/CRUSTDE-Containerized-Rust-Dev-Env/win_git_git-bash_ssh_VSCode)***  
 
  ![tutorial](https://img.shields.io/badge/tutorial-yellow)
- ![win_git_git-bash_ssh_VSCode](https://bestia.dev/webpage_hit_counter/get_svg_image/0.svg)
+ ![win_git_git-bash_ssh_VSCode](https://bestia.dev/webpage_hit_counter/get_svg_image/1099152408.svg)
 
 **WARNING !!! This is a public repository: never write or save secrets here!!!**
 
