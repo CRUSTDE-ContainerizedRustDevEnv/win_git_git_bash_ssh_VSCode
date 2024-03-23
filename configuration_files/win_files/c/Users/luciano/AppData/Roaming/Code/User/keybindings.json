@@ -1,0 +1,36 @@
+// "C:\Users\luciano\AppData\Roaming\Code\User\keybindings.json"
+[
+  {
+    // key combination: ctrl+shift+ć  (mehki ć) 
+    // In all normal editors it is natural to end a sentence with a dot end then NewLine 
+    // for a new paragraph (soft paragraph). 
+    // But markdown has this peculiarity: it just ignores the newline.
+    // To force it you must type 2 spaces before the newline. That is contra-intuituve and I forget it a lot.
+    // Bit to be confused with the real hard paragraph in markdown that is 2 newlines, but I don't like that a lot.
+    // So I made this little search and replace. It is not perfect, 
+    // but it will catch most of this type of errors.
+    // replace dot-newline with dot-space-space-newline
+    // Find in all markdown *.md files: ([\.?!])(\n[^\n]) 
+    // replace with regex captures $1  $2
+
+    "key": "ctrl+shift+oem_7",
+    "command": "workbench.action.findInFiles",
+    "args": {
+      "query": "([\\.?!])(\\n[^\\n])",
+      "replace": "$1  $2",
+      "filesToInclude":"*.md",
+      "isRegex": true,
+      "wholeWord": false
+    }
+  },
+  {
+      // default tab navigation in VSCode is not intuitive. I like this navigation in visible order.
+      "key": "ctrl+tab",
+      "command": "workbench.action.nextEditor"
+  },
+  {
+      // default tab navigation in VSCode is not intuitive. I like this navigation in visible order.
+      "key": "ctrl+shift+tab",
+      "command": "workbench.action.previousEditor"
+  }
+]

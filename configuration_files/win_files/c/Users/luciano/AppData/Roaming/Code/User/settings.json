@@ -1,0 +1,62 @@
+{
+    "files.eol": "\n",
+    "editor.minimap.enabled": false,
+    "git.enableSmartCommit": true,
+    "git.confirmSync": false,
+    "remote.SSH.remotePlatform": {
+        "localhost_2201_rustdevuser_ssh_1": "linux"
+    },
+    "security.allowedUNCHosts": [
+        "wsl.localhost",
+        "wsl$"
+    ],
+    "workbench.startupEditor": "none",
+    "editor.inlayHints.enabled": "off",
+    "files.autoSave": "afterDelay",
+    "editor.renderWhitespace": "none",
+    "vscodemacros.macroFilePath": "./.vscode/macros.js",
+    "workbench.panel.defaultLocation": "right",
+    "editor.unicodeHighlight.invisibleCharacters": false,
+    "editor.unicodeHighlight.nonBasicASCII": false,
+    "git.openRepositoryInParentFolders": "never",
+    "editor.autoIndent": "none",
+    "grammarly.files.include": [
+        "**/README.md",
+        "**/LICENSE"
+    ],
+    "grammarly.config.documentDialect": "american",
+    "diffEditor.ignoreTrimWhitespace": false,
+    "git.allowForcePush": true,
+    "cSpell.userWords": [
+        "Oaep"
+    ],
+    "rust-analyzer.lens.implementations.enable": false,
+    "window.restoreWindows": "none",
+    "remote.SSH.path": "C:\\Program Files\\Git\\usr\\bin\\ssh.exe",
+    "files.associations": {
+        "*.ssh_config": "ssh_config"
+    },
+    "remote.SSH.configFile": "C:\\Users\\luciano\\.ssh\\config",
+    "terminal.integrated.profiles.windows": {
+        "PowerShell": {
+            "source": "PowerShell",
+            "icon": "terminal-powershell"
+        },
+        "Command Prompt": {
+            "path": [
+                "${env:windir}\\Sysnative\\cmd.exe",
+                "${env:windir}\\System32\\cmd.exe"
+            ],
+            "args": [],
+            "icon": "terminal-cmd"
+        },
+        "Git Bash": {
+            "source": "Git Bash",
+            "path": "C:\\Program Files\\Git\\bin\\bash.exe"
+        }
+    },
+    "terminal.integrated.automationProfile.windows": {
+        "path":  "C:\\Program Files\\Git\\bin\\bash.exe"
+    },
+    "terminal.integrated.defaultProfile.windows": "Git Bash"
+}

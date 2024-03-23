@@ -1,0 +1,7 @@
+[core]
+	editor = \"C:\\Users\\luciano\\AppData\\Local\\Programs\\Microsoft VS Code\\bin\\code\" --wait
+	eol = lf
+	autocrlf = input
+[user]
+	email = info@bestia.dev
+	name = luciano_bestia
