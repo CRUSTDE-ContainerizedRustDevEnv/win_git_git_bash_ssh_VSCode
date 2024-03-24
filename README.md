@@ -64,7 +64,7 @@ Running one Windows command inside `git-bash`:
 MSYS_NO_PATHCONV=1 dism.exe /online /enable-feature /featurename:Microsoft-Windows-Subsystem-Linux /all /norestart
 ```
 
-Running many Windows command inside `git-bash`:
+Running many Windows commands inside `git-bash`:
 
 ```bash
 # export env var for many command and unset it after
@@ -85,7 +85,7 @@ SSH is great. In Linux, it works seamlessly. In Windows, it came late to the par
 
 ### Remove incompatible solutions
 
-**WARNING:** there are many incompatible SSH solutions for Windows and it can be a mess if there are more than one solution installed. I chose to use only the **SSH** that comes with [git for Windows](https://git-scm.com/download/win).  
+**WARNING:** there are many incompatible SSH solutions for Windows and it can be a mess if there is more than one solution installed. I chose to use only the **SSH** that comes with [git for Windows](https://git-scm.com/download/win).  
 
 1. First I removed the "OpenSSH components in Optional Features".  
 In `Manage Optional Features` uninstall OpenSSH client and Server. They are some old versions anyway. Sadly, it will leave some files behind:  
