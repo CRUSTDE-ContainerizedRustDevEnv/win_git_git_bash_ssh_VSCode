@@ -135,6 +135,18 @@ And so on...
 
 Press F1 - Preferences: Open user settings (JSON) and add the json template from [here](configuration_files/win_files/c/Users/luciano/AppData/Roaming/Code/User/settings.json).  
 
+## VSCode extensions
+
+My favorite extensions for VSCode:
+
+- [Remote - SSH](https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.remote-ssh)
+- [rust-analyzer](https://marketplace.visualstudio.com/items?itemName=rust-lang.rust-analyzer)
+- [markdownlint](https://marketplace.visualstudio.com/items?itemName=DavidAnson.vscode-markdownlint)
+- [Code Spell Checker](https://marketplace.visualstudio.com/items?itemName=streetsidesoftware.code-spell-checker)
+- [crates](https://marketplace.visualstudio.com/items?itemName=serayuzgur.crates)
+- [Live Preview](https://marketplace.visualstudio.com/items?itemName=ms-vscode.live-server)
+- [XML Tools](https://marketplace.visualstudio.com/items?itemName=DotJoshJohnson.xml)
+
 ### VSCode Markdown
 
 One peculiarity of Markdown is that a single NewLine is completely ignored and transformed into a space.  
