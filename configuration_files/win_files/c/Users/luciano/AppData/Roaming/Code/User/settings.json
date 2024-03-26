@@ -4,7 +4,7 @@
     "git.enableSmartCommit": true,
     "git.confirmSync": false,
     "remote.SSH.remotePlatform": {
-        "localhost_2201_rustdevuser_ssh_1": "linux"
+        "crustde_rustdevuser_ssh_1": "linux"
     },
     "security.allowedUNCHosts": [
         "wsl.localhost",

@@ -1,15 +1,15 @@
-# win_git_git-bash_ssh_VSCode
+# win_git_git_bash_ssh_VSCode
 
 **Windows utils for CRUSTDE: git, git-bash, SSH, VSCode**  
-***version: 2024.323.1347 date: 2024-03-23 author: [bestia.dev](https://bestia.dev) repository: [GitHub](https://github.com/CRUSTDE-Containerized-Rust-DevEnv/win_git_git-bash_ssh_VSCode)***  
+***version: 2024.323.1347 date: 2024-03-23 author: [bestia.dev](https://bestia.dev) repository: [GitHub](https://github.com/CRUSTDE-ContainerizedRustDevEnv/win_git_git_bash_ssh_VSCode)***  
 
  ![tutorial](https://img.shields.io/badge/tutorial-yellow)
- ![win_git_git-bash_ssh_VSCode](https://bestia.dev/webpage_hit_counter/get_svg_image/1099152408.svg)
+ ![win_git_git_bash_ssh_VSCode](https://bestia.dev/webpage_hit_counter/get_svg_image/1099152408.svg)
 
 **WARNING !!! This is a public repository: never write or save secrets here!!!**
 
- ![logo](https://raw.githubusercontent.com/CRUSTDE-Containerized-Rust-DevEnv/CRUSTDE-Containerized-Rust-DevEnv/main/images/crustde_250x250.png)
- win_git_git-bash_ssh_VSCode is a member of the [CRUSTDE-Containerized-Rust-DevEnv](https://github.com/orgs/CRUSTDE-Containerized-Rust-DevEnv/repositories?q=sort%3Aname-asc) project.
+ ![logo](https://raw.githubusercontent.com/CRUSTDE-ContainerizedRustDevEnv/CRUSTDE-ContainerizedRustDevEnv/main/images/crustde_250x250.png)
+ win_git_git_bash_ssh_VSCode is a member of the [CRUSTDE-ContainerizedRustDevEnv](https://github.com/orgs/CRUSTDE-ContainerizedRustDevEnv/repositories?q=sort%3Aname-asc) project.
 
 Hashtags: #rustlang #tutorial #buildtool #developmenttool  
 My projects on GitHub are more like a tutorial than a finished product: [bestia-dev tutorials](https://github.com/bestia-dev/tutorials_rust_wasm).
@@ -194,7 +194,7 @@ Find the code [here](configuration_files/win_files/c/Users/luciano/AppData/Roami
 ## Rust on Windows
 
 I don't want to install rust on my Windows machine.  
-I will try to use [cross-compile inside the CRUSTDE container](https://github.com/CRUSTDE-Containerized-Rust-DevEnv/cross_compile_crustde_container).  
+I will try to use [cross-compile inside the CRUSTDE container](https://github.com/CRUSTDE-ContainerizedRustDevEnv/cross_compile_crustde_container).  
 
 ## LF or CRLF
 
