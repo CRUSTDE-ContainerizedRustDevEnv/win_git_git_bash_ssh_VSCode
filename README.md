@@ -106,7 +106,7 @@ This must return "empty".
 And check that the env variable GIT_SSH is not set in git-bash.
 
 ```bash
-echo $GIT_SSH
+printf "$GIT_SSH\n"
 ```
 
 This must return "empty".

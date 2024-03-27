@@ -24,19 +24,19 @@ agent_load_env
 agent_run_state=$(ssh-add -l >| /dev/null 2>&1; echo $?)
 
 if [ ! "$SSH_AUTH_SOCK" ] || [ $agent_run_state = 2 ]; then
-    echo -e "  \033[33m Starting ssh-agent as a windows process in the background (look up in Task Manager)  \033[0m"
+    printf "  \033[33m Starting ssh-agent as a windows process in the background (look up in Task Manager)  \033[0m\n"
     agent_start
-    # echo "Setting Windows SSH user environment variables (pid: $SSH_AGENT_PID, sock: $SSH_AUTH_SOCK)"
+    # printf "Setting Windows SSH user environment variables (pid: $SSH_AGENT_PID, sock: $SSH_AUTH_SOCK)\n"
     setx SSH_AGENT_PID "$SSH_AGENT_PID" > /dev/null
     setx SSH_AUTH_SOCK "$SSH_AUTH_SOCK" > /dev/null
 fi
 
-echo -e "  \033[33m Use the global command 'sshadd' to simply add your private SSH keys to ssh-agent $SSH_AGENT_PID. \033[0m"
-alias sshadd="echo sh ~/.ssh/sshadd.sh; sh ~/.ssh/sshadd.sh"
+printf "  \033[33m Use the global command 'sshadd' to simply add your private SSH keys to ssh-agent $SSH_AGENT_PID. \033[0m\n"
+alias sshadd="printf 'sh ~/.ssh/sshadd.sh\n'; sh ~/.ssh/sshadd.sh"
 
 # endregion: ssh-agent and sshadd
 
-echo " "
+printf " \n"
 
 unset env
 
