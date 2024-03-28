@@ -46,5 +46,7 @@
     "terminal.integrated.automationProfile.windows": {
         "path":  "C:\\Program Files\\Git\\bin\\bash.exe"
     },
-    "terminal.integrated.defaultProfile.windows": "Git Bash"
+    "terminal.integrated.defaultProfile.windows": "Git Bash",
+    "terminal.integrated.rightClickBehavior": "paste",
+    "terminal.integrated.copyOnSelection": true
 }
