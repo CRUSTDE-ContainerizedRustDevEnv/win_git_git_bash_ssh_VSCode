@@ -40,5 +40,9 @@ printf " \n"
 
 unset env
 
+# set nano as my default editor
+export VISUAL=nano
+export EDITOR="$VISUAL"
+
 # shorten the prompt
 export PS1='\[\033[01;35m\]\u@git-bash\[\033[01;34m\]:\w\[\033[00m\]\$ '
