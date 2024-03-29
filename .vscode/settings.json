@@ -18,6 +18,9 @@
     },
     "rust-analyzer.showUnlinkedFileNotification": false,
     "cSpell.words": [
+        "zcvf",
+        "thiserror",
+        "struct",
         "Alla",
         "autocrlf",
         "bestia",
