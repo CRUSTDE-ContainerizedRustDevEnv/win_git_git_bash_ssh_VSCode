@@ -117,9 +117,9 @@ This must return "empty".
 
 ### ssh-agent in Windows
 
-Every time I connect over SSH I must input the passcode for my SSH identity. Even `git push` works over SSH, so every time I have to input the password. This is great for security, but it is an awful user experience. You can choose to be less secure with some ssh keys and be more productive with ssh-agent. Your choice.  
+Every time I connect over SSH I must input the passphrase for my SSH identity. Even `git push` works over SSH, so every time I have to input the password. This is great for security, but it is an awful user experience. You can choose to be less secure with some ssh keys and be more productive with ssh-agent. Your choice.  
 
-Git-bash comes with `ssh-agent` and I could use it just the same as in Linux bash to avoid retyping the passcode every time. ssh-agent asks for the passcode only once and then stores securely the unencrypted private key in memory until the session is terminated or the timeout expires.  
+Git-bash comes with `ssh-agent` and I could use it just the same as in Linux bash to avoid retyping the passphrase every time. ssh-agent asks for the passphrase only once and then stores securely the unencrypted private key in memory until the session is terminated or the timeout expires.  
 
 I want the ssh-agent to start when I manually run the git-bash console. I wrote a little script in `~/.bashrc` file for git-bash in Windows. Find the code [here](configuration_files/win_files/c/Users/luciano/.bashrc).  
 
