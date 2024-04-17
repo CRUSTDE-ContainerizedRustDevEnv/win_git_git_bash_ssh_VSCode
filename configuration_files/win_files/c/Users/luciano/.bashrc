@@ -46,3 +46,6 @@ export EDITOR="$VISUAL"
 
 # shorten the prompt
 export PS1='\[\033[01;35m\]\u@git-bash\[\033[01;34m\]:\w\[\033[00m\]\$ '
+
+printf "  \033[33m After sshadd, run VSCode and connect to the container CRUSTDE. \033[0m\n"
+printf "\033[32m MSYS_NO_PATHCONV=1 code --remote ssh-remote+crustde_rustdevuser /home/rustdevuser/rustprojects \033[0m\n"

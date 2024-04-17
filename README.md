@@ -53,7 +53,7 @@ git config --global -l
 Very sadly, the paths in Windows are different than the paths in Linux.  
 Unix came first, so I blame Microsoft for not sticking to the standard. Microsoft being Microsoft, has to "EEE" Embrace, Extend, and Extinguish. Instead of a natural `/` slash they decided to use `\` backslash. Just so to be different. I am sure there was no other reason. They repeated this strategy over and over again with different standards.  
 
-Now that we have `bash` inside windows this was a tough thing to solve. The solution is "path conversion". When `git-bash` finds the `/` slash symbol it assumes it is a path and makes the conversion. So `/home/foogar/` becomes `C:/Users/user/AppData/Local/Git/home/foobar`. Horrible, but it works for Linux commands because they don't use `/` for anything else, just paths.
+Now that we have `bash` inside windows this was a tough thing to solve. The solution is "path conversion". When `git-bash` finds the `/` slash symbol it assumes it is a path and makes the conversion. So `/home/foobar/` becomes `C:/Users/user/AppData/Local/Git/home/foobar`. Horrible, but it works for Linux commands because they don't use `/` for anything else, just paths.
 
 If we want to run some Windows commands inside `git-bash` it becomes a problem because Microsoft decided that using `/` for arguments is very smart. Bad Microsoft.
 
