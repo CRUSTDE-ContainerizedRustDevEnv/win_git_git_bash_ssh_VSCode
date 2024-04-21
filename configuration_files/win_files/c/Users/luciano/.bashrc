@@ -21,7 +21,7 @@ agent_start () {
 agent_load_env
 
 # agent_run_state: 0=agent running w/ key; 1=agent w/o key; 2= agent not running
-agent_run_state=$(ssh-add -l >| /dev/null 2>&1; echo $?)
+agent_run_state=$(ssh-add -l >| /dev/null 2>&1; printf $?)
 
 if [ ! "$SSH_AUTH_SOCK" ] || [ $agent_run_state = 2 ]; then
     printf "  \033[33m Starting ssh-agent as a windows process in the background... \033[0m\n"
@@ -33,7 +33,7 @@ if [ ! "$SSH_AUTH_SOCK" ] || [ $agent_run_state = 2 ]; then
 fi
 
 printf "  \033[33m Use this script to simply add your private SSH keys to ssh-agent $SSH_AGENT_PID: \033[0m\n"
-printf "\033[32m'sshadd'\033[33m\n"
+printf "\033[32m sshadd \033[33m\n"
 
 alias sshadd="printf 'sh ~/.ssh/sshadd.sh\n'; sh ~/.ssh/sshadd.sh"
 
