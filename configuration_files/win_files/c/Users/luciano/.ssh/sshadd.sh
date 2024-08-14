@@ -1,12 +1,12 @@
 #!/bin/sh
 
 # C:\Users\luciano\.ssh\sshadd.sh
-# Inside this template, replace the words github_com_bestia_dev_git_ssh_1 and bestia_dev_luciano_bestia_ssh_1 
+# Inside this template, replace the words github_com_bestia_dev_git_ssh_1, github_com_GuitaraokeLeader_git_ssh_1 and bestia_dev_luciano_bestia_ssh_1 
 # with your identity file names for the ssh private key.
 
 printf " \n"
 printf "  \033[33m Add often used SSH identity private keys to git-bash ssh-agent in Windows \033[0m\n"
-printf "  \033[33m If you add arguments 'github', 'bestia.dev' or 'crustde' you will add only one credential. \033[0m\n"
+printf "  \033[33m If you add arguments 'github/bestia-dev','github/GuitaraokeLeader', 'bestia.dev' or 'crustde' you will add only one credential. \033[0m\n"
 
 printf " \n"
 printf "  \033[33m The ssh-agent should be started already on git-bash first start inside the ~/.bashrc script. \033[0m\n"
@@ -17,12 +17,18 @@ printf "  \033[33m If not, ssh-agent will send all the keys to the server and th
 printf " \n"
 # check the content of ~/.ssh/config if it contains all the ssh keys
 cat ~/.ssh/config | grep -q "//wsl.localhost/Debian/home/luciano/.ssh/github_com_bestia_dev_git_ssh_1" || printf "  \033[31m The ~/.ssh/config does not contain the identity //wsl.localhost/Debian/home/luciano/.ssh/github_com_bestia_dev_git_ssh_1. \033[0m\n"
+cat ~/.ssh/config | grep -q "//wsl.localhost/Debian/home/luciano/.ssh/github_com_GuitaraokeLeader_git_ssh_1" || printf "  \033[31m The ~/.ssh/config does not contain the identity //wsl.localhost/Debian/home/luciano/.ssh/github_com_GuitaraokeLeader_git_ssh_1. \033[0m\n"
 cat ~/.ssh/config | grep -q "//wsl.localhost/Debian/home/luciano/.ssh/bestia_dev_luciano_bestia_ssh_1" || printf "  \033[31m The ~/.ssh/config does not contain the identity //wsl.localhost/Debian/home/luciano/.ssh/bestia_dev_luciano_bestia_ssh_1. \033[0m\n"
 cat ~/.ssh/config | grep -q "//wsl.localhost/Debian/home/luciano/.ssh/crustde_rustdevuser_ssh_1" || printf "  \033[31m The ~/.ssh/config does not contain the identity //wsl.localhost/Debian/home/luciano/.ssh/crustde_rustdevuser_ssh_1. \033[0m\n"
 
-if [ $# -eq 0 ] || [ $1 = "github" ]; then
+if [ $# -eq 0 ] || [ $1 = "github/bestia-dev" ]; then
     # add if key not yet exist in ssh-agent for git@github.com
-    ssh-add -l | grep -q `ssh-keygen -lf //wsl.localhost/Debian/home/luciano/.ssh/github_com_bestia_dev_git_ssh_1 | awk '{print $2}'` || (printf "  \033[33m github \033[0m\n" & ssh-add -t 1h //wsl.localhost/Debian/home/luciano/.ssh/github_com_bestia_dev_git_ssh_1)
+    ssh-add -l | grep -q `ssh-keygen -lf //wsl.localhost/Debian/home/luciano/.ssh/github_com_bestia_dev_git_ssh_1 | awk '{print $2}'` || (printf "  \033[33m github/bestia-dev \033[0m\n" & ssh-add -t 1h //wsl.localhost/Debian/home/luciano/.ssh/github_com_bestia_dev_git_ssh_1)
+fi
+
+if [ $# -eq 0 ] || [ $1 = "github/GuitaraokeLeader" ]; then
+    # add if key not yet exist in ssh-agent for git@github.com
+    ssh-add -l | grep -q `ssh-keygen -lf //wsl.localhost/Debian/home/luciano/.ssh/github_com_GuitaraokeLeader_git_ssh_1 | awk '{print $2}'` || (printf "  \033[33m github/GuitaraokeLeader \033[0m\n" & ssh-add -t 1h //wsl.localhost/Debian/home/luciano/.ssh/github_com_GuitaraokeLeader_git_ssh_1)
 fi
 
 if [ $# -eq 0 ] || [ $1 = "bestia.dev" ]; then
