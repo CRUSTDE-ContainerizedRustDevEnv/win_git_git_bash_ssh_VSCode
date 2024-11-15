@@ -1,7 +1,10 @@
-[core]
-	editor = \"C:\\Users\\luciano\\AppData\\Local\\Programs\\Microsoft VS Code\\bin\\code\" --wait
-	eol = lf
-	autocrlf = input
-[user]
-	email = info@bestia.dev
-	name = luciano_bestia
+[includeIf "gitdir/i:D:/Dropbox/BestiaDev/github_backup_active/"]
+  path = .gitconfig-bestia-dev
+[includeIf "gitdir/i:D:/Dropbox/BestiaDev/github_backup_archived/"]
+  path = .gitconfig-bestia-dev
+[includeIf "gitdir/i:D:/Dropbox/BestiaDev/github_backup_private_archived/"]
+  path = .gitconfig-bestia-dev
+[includeIf "gitdir/i://wsl.localhost/Debian/home/luciano/rustprojects/"]
+  path = .gitconfig-bestia-dev
+[includeIf "gitdir/i:D:/Dropbox/BestiaDev/github_backup_GuitaraokeLeader/"]
+  path = .gitconfig-GuitaraokeLeader

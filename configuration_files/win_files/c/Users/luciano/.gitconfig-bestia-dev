@@ -1,0 +1,12 @@
+[core]
+  # solution when having more then one GitHub account
+  sshCommand = ssh -i //wsl.localhost/Debian/home/luciano/.ssh/github_com_bestia_dev_git_ssh_1
+  editor = C:\\Users\\luciano\\AppData\\Local\\Programs\\Microsoft VS Code\\bin\\code
+  eol = lf
+  autocrlf = input
+[safe]
+  directory = D:/Dropbox/BestiaDev/github_backup
+  directory = //wsl.localhost/Debian/home/luciano/rustprojects
+[user]
+  email = info@bestia.dev
+  name = bestia.dev
