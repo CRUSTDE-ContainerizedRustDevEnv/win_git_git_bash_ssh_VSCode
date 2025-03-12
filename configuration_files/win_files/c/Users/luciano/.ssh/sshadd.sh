@@ -5,7 +5,7 @@
 # with your identity file names for the ssh private key.
 
 printf " \n"
-printf "  \033[33m Add often used SSH identity private keys to git-bash ssh-agent in Windows \033[0m\n"
+printf "  \033[33m Add often used SSH identity private keys to Windows git-bash ssh-agent \033[0m\n"
 printf "  \033[33m If you add arguments 'github/bestia-dev','github/GuitaraokeLeader', 'bestia.dev' or 'crustde' you will add only one credential. \033[0m\n"
 
 printf " \n"

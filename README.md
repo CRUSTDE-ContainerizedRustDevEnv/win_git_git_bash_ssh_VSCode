@@ -116,7 +116,7 @@ This must return "empty".
 
 4. To be sure, I searched all my `C:` disks and found only one `ssh.exe` in `C:\Program Files\Git\usr\bin\ssh.exe`. Good!
 
-### ssh-agent in Windows
+### ssh-agent in Windows git-bash
 
 Every time I connect over SSH I must input the passphrase for my SSH identity. Even `git push` works over SSH, so every time I have to input the password. This is great for security, but it is an awful user experience. You can choose to be less secure with some ssh keys and be more productive with ssh-agent. Your choice.  
 
