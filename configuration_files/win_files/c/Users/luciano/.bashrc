@@ -32,9 +32,7 @@ if [ ! "$SSH_AUTH_SOCK" ] || [ $agent_run_state = 2 ]; then
     setx SSH_AUTH_SOCK "$SSH_AUTH_SOCK" > /dev/null
 fi
 
-printf "  \033[33m Use this script to simply add your private SSH keys to ssh-agent $SSH_AGENT_PID: \033[0m\n"
-printf "\033[32m sshadd crustde \033[33m\n"
-
+printf "  \033[33m Use 'sshadd' to simply add your private SSH keys to ssh-agent $SSH_AGENT_PID. \033[0m\n"
 alias sshadd="printf 'sh ~/.ssh/sshadd.sh\n'; sh ~/.ssh/sshadd.sh"
 
 # endregion: ssh-agent and sshadd
@@ -51,4 +49,5 @@ export EDITOR="$VISUAL"
 export PS1='\[\033[01;35m\]\u@git-bash\[\033[01;34m\]:\W\[\033[00m\]\$ '
 
 printf "  \033[33m The container CRUSTDE must be initialized once after reboot and follow instructions: \033[0m\n"
+printf "\033[32m sshadd crustde \033[33m\n"
 printf "\033[32m MSYS_NO_PATHCONV=1 wsl sh /home/luciano/rustprojects/crustde_install/crustde_pod_after_reboot.sh \033[0m\n"
