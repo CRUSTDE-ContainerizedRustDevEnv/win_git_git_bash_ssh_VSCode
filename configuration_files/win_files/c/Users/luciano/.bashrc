@@ -5,11 +5,17 @@
 # Luciano 2024-03-17: I added some commands for my configuration of git-bash (for Rust development)
 # ~/.bashrc is executed by bash for non-login interactive shells every time.  (not for login non-interactive scripts)
 
-alias l="ls -al"
-alias ll="ls -l"
+# region: bash_history
+HISTCONTROL=ignorespace:ignoredups:erasedups
+HISTIGNORE='ls:bg:fg:history'
+# Prepend permanently stored commands into history. These are manually maintained, because they are often used.
+cat  ~/.bash_history ~/.bash_history_permanent > ~/.bash_history_tmp 2>/dev/null
+# deduplicate, but preserve order
+awk '!a[$0]++' ~/.bash_history_tmp > ~/.bash_history
+rm ~/.bash_history_tmp
+# endregion: bash_history
 
 # region: ssh-agent and sshadd
-
 env=~/.ssh/agent.env
 
 agent_load_env () { test -f "$env" && . "$env" | /dev/null ; }
@@ -32,14 +38,11 @@ if [ ! "$SSH_AUTH_SOCK" ] || [ $agent_run_state = 2 ]; then
     setx SSH_AUTH_SOCK "$SSH_AUTH_SOCK" > /dev/null
 fi
 
-printf "  \033[33m Use 'sshadd' to simply add your private SSH keys to ssh-agent $SSH_AGENT_PID. \033[0m\n"
+printf "  \033[33m Use the command 'sshadd' to simply add your private SSH keys to ssh-agent $SSH_AGENT_PID. \033[0m\n"
 alias sshadd="printf 'sh ~/.ssh/sshadd.sh\n'; sh ~/.ssh/sshadd.sh"
-
-# endregion: ssh-agent and sshadd
-
-printf " \n"
-
 unset env
+printf " \n"
+# endregion: ssh-agent and sshadd
 
 # set nano as my default editor
 export VISUAL=nano
@@ -51,3 +54,4 @@ export PS1='\[\033[01;35m\]\u@git-bash\[\033[01;34m\]:\W\[\033[00m\]\$ '
 printf "  \033[33m The container CRUSTDE must be initialized once after reboot and follow instructions: \033[0m\n"
 printf "\033[32m sshadd crustde \033[33m\n"
 printf "\033[32m MSYS_NO_PATHCONV=1 wsl sh /home/luciano/rustprojects/crustde_install/crustde_pod_after_reboot.sh \033[0m\n"
+
