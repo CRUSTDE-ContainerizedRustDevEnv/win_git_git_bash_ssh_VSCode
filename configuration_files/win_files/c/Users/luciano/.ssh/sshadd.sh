@@ -1,17 +1,17 @@
 #!/bin/sh
 
-# C:\Users\luciano\.ssh\sshadd.sh
+# C:\Users\luciano\.ssh\sshadd.sh for Windows git-bash
 # List all private keys in //wsl.localhost/Debian/home/luciano/.ssh and offer ssh-add for them.
 # The command argument can filter only for keys that contain the string.
 
 printf "\n"
 printf "\033[33m  Add often used SSH identity private keys to ssh-agent \033[0m\n"
 
-printf " \n"
-printf "  \033[33m The ssh-agent should be started already on git-bash first start inside the ~/.bashrc script. \033[0m\n"
-printf "  \033[33m <https://github.com/CRUSTDE-ContainerizedRustDevEnv/crustde_cnt_img_pod/blob/main/ssh_easy.md> \033[0m\n"
-printf "  \033[33m It is recommended to use the ~/.ssh/config file to assign explicitly one ssh key to one ssh server. \033[0m\n"
-printf "  \033[33m If not, ssh-agent will send all the keys to the server and the server could refute the connection because of too many bad keys. \033[0m\n"
+printf "\n"
+printf "\033[33m  The ssh-agent should be started already on git-bash first start inside the ~/.bashrc script. \033[0m\n"
+printf "\033[33m  <https://github.com/CRUSTDE-ContainerizedRustDevEnv/crustde_cnt_img_pod/blob/main/ssh_easy.md> \033[0m\n"
+printf "\033[33m  It is recommended to use the ~/.ssh/config file to assign explicitly one ssh key to one ssh server. \033[0m\n"
+printf "\033[33m  If not, ssh-agent will send all the keys to the server and the server could refute the connection because of too many bad keys. \033[0m\n"
 
 # List the private key files inside ~/.ssh
 printf "\n"
@@ -54,6 +54,8 @@ printf "\033[32mssh-add -D \033[0m\n"
 printf "\n" 
 printf "\033[33m  List public fingerprints inside ssh-agent: \033[0m\n"
 printf "\033[32mssh-add -l \033[0m\n"
+printf "\n"
+printf "\033[33m  List identities inside ssh-agent:  \033[0m\n"
 for entry in //wsl.localhost/Debian/home/luciano/.ssh/*.pub 
 do
   # remove suffix .pub
@@ -66,4 +68,3 @@ do
 done
 
 printf "\n"
-
