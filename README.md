@@ -54,11 +54,11 @@ git config --global -l
 Very sadly, the paths in Windows are different than the paths in Linux.  
 Unix came first, so I blame Microsoft for not sticking to the standard. Microsoft being Microsoft, has to "EEE" Embrace, Extend, and Extinguish. Instead of a natural `/` slash they decided to use `\` backslash. Just so to be different. I am sure there was no other reason. They repeated this strategy over and over again with different standards.  
 
-Now that we have `bash` inside windows this was a tough thing to solve. The solution is "path conversion". When `git-bash` finds the `/` slash symbol it assumes it is a path and makes the conversion. So `/home/foobar/` becomes `C:/Users/user/AppData/Local/Git/home/foobar`. Horrible, but it works for Linux commands because they don't use `/` for anything else, just paths.
+Now that we have `bash` inside windows this was a tough thing to solve. The solution is "path conversion". When `git-bash` finds the `/` slash symbol it assumes it is a path and makes the conversion. So `/home/foobar/` becomes `C:\Users\user\AppData\Local\Git\home\foobar`. Horrible, but it works for Linux commands because they don't use `/` for anything else, just paths.
 
 If we want to run some Windows commands inside `git-bash` it becomes a problem because Microsoft decided that using `/` for arguments is very smart. Bad Microsoft.
 
-The solution is to use a special environment variable to disable the path conversion: MSYS_NO_PATHCONV. If this variable exists (the content does not matter at all) then `git-bash` does not perform path conversion.
+The solution is to use a special environment variable to disable the path conversion: MSYS_NO_PATHCONV=1. If this variable exists (the content does not matter at all) then `git-bash` does not perform path conversion.
 
 Running one Windows command inside `git-bash`:
 
@@ -81,6 +81,39 @@ unset MSYS_NO_PATHCONV
 ```
 
 With this knowledge, we are ready to run Linux and Windows commands from `git-bash` and avoid using Command prompt and PowerShell at all.
+
+## Install additional commands on Git Bash (Windows 10)
+
+Git-bash is made from MSYS2, just reduced to the minimum. It does not have wget, zip, zstd, rsync,...
+
+We can install manually these packages from MSYS2 into git-bash.  
+The first problem is that the packages are compressed with a very new `zstd` alghoritm from facebook. That program is not default to git-bash. We cannot use it from //packages.msys2.org because it is compressed with zstd. The classic chicken and egg problem.  
+We can workaround the problem in WSL Debian:
+
+```bash
+sudo apt update
+sudo apt upgrade
+sudo apt install zstd
+
+mkdir -p ~/rustprojects
+cd ~/rustprojects
+# web page https://packages.msys2.org/packages/mingw-w64-x86_64-zstd
+curl -OL https://mirror.msys2.org/mingw/mingw64/mingw-w64-x86_64-zstd-1.5.7-1-any.pkg.tar.zst 
+mkdir -p mingw-w64-x86_64-zstd
+tar --zstd -xvf mingw-w64-x86_64-zstd-1.5.7-1-any.pkg.tar.zst -C mingw-w64-x86_64-zstd
+rm mingw-w64-x86_64-zstd-1.5.7-1-any.pkg.tar.zst
+```
+
+Now use 'git-bash' Run as Administrator to copy files into Windows:
+
+```bash
+cp //wsl.localhost/debian/home/luciano/rustprojects/mingw-w64-x86_64-zstd/mingw64/bin/*.exe "/c/Program Files/Git/mingw64/bin/"
+```
+
+We have now zstd inside git-bash and we can install msys2 packages  
+from inside git-bash Run as Administrator.
+
+TODO: I couldn't install zip or rsync
 
 ## SSH in Windows (Git SSH)
 
@@ -162,7 +195,7 @@ In Windows "C:\Users\luciano\.ssh\config" I used the paths like `//wsl.localhost
 <https://code.visualstudio.com/download>  
 Backup and sync settings with my GitHub account bestia-dev.  
 
-WARNING: Don't install `WSL extension``. It is not needed for work in WSL folders from Windows and it disables the remote ssh connection for VSCode!  
+WARNING: Don't install `WSL extension`. It is not needed for work in WSL folders from Windows and it disables the remote ssh connection for VSCode!  
 
 I have an opinionated configuration file I use:  
 I want git-bash to be my default terminal inside VSCode for Windows.  

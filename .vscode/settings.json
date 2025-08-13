@@ -18,9 +18,7 @@
     },
     "rust-analyzer.showUnlinkedFileNotification": false,
     "cSpell.words": [
-        "zcvf",
-        "thiserror",
-        "struct",
+        "alghoritm",
         "Alla",
         "autocrlf",
         "bestia",
@@ -45,6 +43,7 @@
         "Inkspace",
         "Irfan",
         "Krita",
+        "librsync",
         "MSYS",
         "Nazdravlje",
         "norestart",
@@ -60,7 +59,9 @@
         "splitted",
         "sshadd",
         "startuml",
+        "struct",
         "substack",
+        "thiserror",
         "totalcmd",
         "userprofile",
         "ventoy",
@@ -68,6 +69,8 @@
         "webserverssh",
         "wezterm",
         "Winget",
-        "zdravje"
+        "zcvf",
+        "zdravje",
+        "zstd"
     ]
 }
