@@ -8,11 +8,13 @@
 # region: bash_history
 HISTCONTROL=ignorespace:ignoredups:erasedups
 HISTIGNORE='ls:bg:fg:history'
-# Prepend permanently stored commands into history. These are manually maintained, because they are often used.
-cat  ~/.bash_history ~/.bash_history_permanent > ~/.bash_history_tmp 2>/dev/null
-# deduplicate, but preserve order
-awk '!a[$0]++' ~/.bash_history_tmp > ~/.bash_history
-rm ~/.bash_history_tmp
+if [ ! -f "~/.bash_history_tmp" ]; then
+    # Prepend permanently stored commands into history. These are manually maintained, because they are often used.
+    cat  ~/.bash_history ~/.bash_history_permanent > ~/.bash_history_tmp 2>/dev/null
+    # deduplicate, but preserve order
+    awk '!a[$0]++' ~/.bash_history_tmp > ~/.bash_history
+    rm ~/.bash_history_tmp
+fi
 # endregion: bash_history
 
 # region: ssh-agent and sshadd
@@ -53,5 +55,14 @@ export PS1='\[\033[01;35m\]\u@git-bash\[\033[01;34m\]:\W\[\033[00m\]\$ '
 
 printf "  \033[33m The container CRUSTDE must be initialized once after reboot and follow instructions: \033[0m\n"
 printf "\033[32m sshadd crustde \033[33m\n"
+printf "  \033[33m Check if the container is running \033[33m\n"
+printf "\033[32m wsl podman ps -a \033[33m\n"
+printf "  \033[33m If needed, initialize after reboot \033[33m\n"
 printf "\033[32m MSYS_NO_PATHCONV=1 wsl sh /home/luciano/rustprojects/crustde_install/crustde_pod_after_reboot.sh \033[0m\n"
+printf "  \033[33m Then open VSCode and connect remotely overs SSH into the container. \033[33m\n"
+printf "\033[32m MSYS_NO_PATHCONV=1 code --remote ssh-remote+crustde /home/rustdevuser/rustprojects \033[33m\n"
 
+alias obsidian="/C/Users/luciano/AppData/Local/Programs/Obsidian/Obsidian.exe"
+
+alias l="ls -al"
+alias ll="ls -l"
